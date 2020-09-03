@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './Dash.css';
 
@@ -15,7 +14,7 @@ class Dash extends Component {
       posts: [],
       loading: true
     }
-    
+
     this.grabPosts = this.grabPosts.bind(this);
     this.reset = this.reset.bind(this);
   }
@@ -66,7 +65,7 @@ class Dash extends Component {
 
     let mappedPosts = posts.map(post => {
       return <div className='content-box dash-post-box' key={post.post_id}>
-          <Link to={`/post/${post.post_id}`}><h3>{post.title}</h3></Link>
+          <h3>{post.title}</h3>
           {
             post.author_username === this.props.username 
             ?

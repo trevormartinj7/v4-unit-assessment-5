@@ -18,7 +18,7 @@ class Post extends Component {
   }
 
   componentDidMount() {
-    axios.get(`/api/post/${this.props.match.params.id}`)
+    axios.get(`/api/post/1`)
       .then(res => {
         this.setState({ ...res.data, loading: false })
       })
@@ -26,7 +26,7 @@ class Post extends Component {
 
   render() {
     let imgSrc = this.state.img ? this.state.img : noImage;
-    
+
     return (
       <div className='post content-box'>
         {!this.state.loading && this.state.title
