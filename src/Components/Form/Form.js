@@ -41,7 +41,7 @@ class Form extends Component {
             <textarea value={this.state.content} onChange={e => this.setState({ content: e.target.value })} />
           </div>
         </div>
-        <button onClick={this.submit} className='dark-button form-button'>Post</button>
+        <button onClick={this.submit} className='dark-button'>Post</button>
       </div>
     );
   }
