@@ -38,7 +38,7 @@ module.exports = {
       }
     },
     createPost: (req, res) => {
-      
+      //code here
     },
     readPost: (req, res) => {
       req.app.get('db').post.read_post(req.params.id)
