@@ -38,7 +38,21 @@ module.exports = {
       }
     },
     createPost: (req, res) => {
-      //code here
+      const db = req.app.get('db');
+
+      const id = req.session.user.id;
+      const {title, img, content} = req.body;
+      const date = new Date;
+      if(req.session.user.id){
+        console.log("user was logged in inside of create post")
+        db.post.create_post(req.session.user.id, title, img, content, date)
+        .then(() => {
+          return res.sendStatus(200)
+        })
+        .catch(err => console.log(err))
+      }
+      return res.status(409).send("No one is logged in")
+
     },
     readPost: (req, res) => {
       req.app.get('db').post.read_post(req.params.id)
