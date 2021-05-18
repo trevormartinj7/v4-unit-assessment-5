@@ -38,12 +38,12 @@ class Nav extends Component {
 
 
   render() {
-    console.log(this.props)
+    console.log("Nav props are", this.props)
       return this.props.location.pathname !== '/' &&
         <div className='nav'>
           <div className='nav-profile-container'>
             <div className='nav-profile-pic' style={{backgroundImage: `url(${this.props.profilePicture})`}}></div>
-            <p>placeholder username</p>
+            <p>{this.props.username}</p>
           </div>
           <div className='nav-links'>
             <Link to='/dash'><img className='nav-img' src={homeLogo} alt='home' /></Link>

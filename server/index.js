@@ -20,11 +20,6 @@ app.use(session({
 }))
 
 
-
-
-
-
-
 //Connecting to server with massive:
 console.log(SERVER_PORT);
 console.log(CONNECTION_STRING);

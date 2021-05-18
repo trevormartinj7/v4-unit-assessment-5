@@ -45,8 +45,9 @@ class Dash extends Component {
   }
 
   deletePost = id => {
+    console.log(id);
     axios.delete(`/api/post/${id}`)
-      .then(_ => this.grabPosts())
+      .then(() => this.grabPosts())
   }
 
   reset() {

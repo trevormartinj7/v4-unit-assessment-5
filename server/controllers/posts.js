@@ -49,9 +49,13 @@ module.exports = {
         .then(() => {
           return res.sendStatus(200)
         })
-        .catch(err => console.log(err))
+        .catch(err => {
+          console.log("REEEEEEEEEE")
+          console.log(err)
+          return res.status(409).send("No one is logged in")
+        })
       }
-      return res.status(409).send("No one is logged in")
+      
 
     },
     readPost: (req, res) => {
@@ -59,6 +63,7 @@ module.exports = {
         .then(post => post[0] ? res.status(200).send(post[0]) : res.status(200).send({}))
     },
     deletePost: (req, res) => {
+      console.log("THE ID OF THE POST THAT'S TO BE DELETED IS " + req.params.id)
       req.app.get('db').post.delete_post(req.params.id)
         .then(_ => res.sendStatus(200))
     }

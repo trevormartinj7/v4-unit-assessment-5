@@ -19,9 +19,11 @@ class Post extends Component {
 
   componentDidMount() {
     //NOT SURE IF THAT SYNTAX IS CORRECT RIP
-    axios.get(`/api/post/${this.props.match.id}`)
+    console.log("Component loaded")
+    axios.get(`/api/post/${this.props.match.params.id}`)
       .then(res => {
         this.setState({ ...res.data, loading: false })
+        console.log(res.data)
       })
   }
 
